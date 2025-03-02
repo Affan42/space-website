@@ -154,146 +154,7 @@ footer {
 .title {
   font-size: var(--big-font-size);
 }
-/*=============== Animations ===============*/
-.slideAnim {
-  opacity: 0;
-  animation: genericAnim var(--duration) ease var(--delay) 1 forwards;
-}
-@keyframes genericAnim {
-  from {
-    opacity: 0;
-    transform: translateX(var(--from-translate-x)) translateY(var(--from-translate-y))
-      rotate(var(--from-rotate));
-  }
-  to {
-    opacity: 1;
-    transform: translateX(var(--to-translate-x)) translateY(var(--to-translate-y)) rotate(var(--to-rotate));
-  }
-}
-/* Slide Down Anims */
 
-/* --from-translate-x: 0;
---from-translate-y: 0;
---from-rotate: 0;
---duration: 0s;
---delay: 0s; */
-
-.SLIDE_DOWN_1 {
-  --from-translate-y: -60px;
-}
-
-.SLIDE_DOWN_2 {
-  --from-translate-y: -60px;
-  --delay: 0.4s;
-}
-
-.SLIDE_DOWN_3 {
-  --from-translate-y: -60px;
-  --delay: 0.8s;
-}
-
-/* Slide Up Anims */
-.SLIDE_UP_1{
-  --from-translate-y: 60px;
-}
-
-/* Slide Right Anims */
-.SLIDE_RIGHT_1{
-  --from-translate-x: -60px;
-  --delay: 0.4s;
-}
-.SLIDE_RIGHT_2{
-  --from-translate-x: -100%;
-  --to-translate-x: -50%;
-  --delay: 1.2s;
-}
-/* Slide Left Anims */
-.SLIDE_LEFT_1{
-  --from-translate-x: 60px;
-  --delay: 0.4s;
-}
-.SLIDE_LEFT_2{
-  --from-translate-x: 60px;
-  --delay: 0.8s;
-}
-.SLIDE_LEFT_3{
-  --from-translate-x: 100%;
-  --to-translate-x: 50%;
-  --delay: 1.2s;
-}
-
-.SLIDE_UP_WITH_DELAY_EXCLUSIVE_ANIM {
-  animation: slideUpDelayExclusive 1.2s ease 0.6s 1 forwards !important;
-}
-@keyframes slideUpDelayExclusive {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(50%);
-    opacity: 1;
-  }
-}
-.SLIDE_RIGHT_ANIM {
-  animation: slideRight 1s ease 0s 1 forwards !important;
-}
-@keyframes slideRight {
-  from {
-    transform: translateX(-60px);
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.SLIDE_RIGHT_ANIM_WITH_DELAY {
-  animation: slideRightDelay 1s ease 0.9s 1 forwards !important;
-}
-@keyframes slideRightDelay {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(-50%);
-    opacity: 1;
-  }
-}
-.SLIDE_LEFT_ANIM {
-  animation: slideLeft 1s ease 0s 1 forwards !important;
-}
-@keyframes slideLeft {
-  from {
-    transform: translateX(60px);
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.SLIDE_LEFT_WITH_DELAY_ANIM {
-  animation: slideLeftDelay 1s ease 0.4s 1 forwards !important;
-}
-@keyframes slideLeftDelay {
-  from {
-    transform: translateX(60px);
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.SLIDE_LEFT_WITH_DELAY_ANIM_PART_TWO {
-  animation: slideLeftDelayPartTwo 1s ease 0.9s 1 forwards !important;
-}
-@keyframes slideLeftDelayPartTwo {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(50%);
-    opacity: 1;
-  }
-}
 /*=============== HEADER & NAV ===============*/
 nav {
   position: fixed;
@@ -534,7 +395,7 @@ position: initial;
 }
 .swiper-pagination-bullet-active {
   position: relative;
-  border: 2px solid rgb(0, 122, 255);
+  border: 2px solid hsl(25, 96%, 55%);
   background-color: transparent;
 }
 .swiper-pagination-bullet-active:after {
@@ -542,7 +403,7 @@ position: initial;
   position: absolute;
   inset: 2px;
   border-radius: 50%;
-  background-color: rgb(0, 122, 255);
+  background: var(--third-gradient);
 }
 
 /*=============== EXPLORE ===============*/
@@ -598,14 +459,13 @@ position: initial;
 }
 
 .history .planet_1 {
-  left: 0;
-  transform: translateX(-50%);
+  left: -14rem;
+  
   height: 400px;
   top: 10%;
 }
 .history .planet_2 {
-  right: 0;
-  transform: translateX(50%);
+  right: -6rem;
   height: 200px;
   top: 10%;
 }
@@ -772,11 +632,17 @@ body::-webkit-scrollbar-thumb{
   border: 1px solid white;
   background-color: black;
   border-radius: 60%;
-  position: fixed;
+  position: absolute;
   right: 10%;
   bottom: 10%;
   cursor: pointer;
-  
+  transition: transform .4s;
+}
+.scroll_up_btn:hover{
+  transform: translateY(-15px);
+}
+.invisible{
+  display: none;
 }
 .ri-arrow-up-line{
   font-size: 24px;
@@ -895,14 +761,15 @@ body::-webkit-scrollbar-thumb{
   .history .planet_1 {
     top: 20%;
     height: 150px;
+    left: -5rem;
   }
   .history .planet_2 {
     height: 100px;
     top: 15%;
+    right: -3.5rem;
   }
   footer .planet_1 {
     bottom: 0;
-    transform: translateY(50%);
     height: 200px;
     left: -15%;
   }

@@ -82,22 +82,22 @@ const originalPlanets = [
   {
     name: "PLANET EARTH",
     distance: "54.06 million km",
-    img: "/Projects/space_website/assets/img/travel-planet-1.svg",
+    img: "assets/img/travel-planet-1.svg",
   },
   {
     name: "THE SUN",
     distance: "148.14 million km",
-    img: "/Projects/space_website/assets/img/travel-planet-2.svg",
+    img: "assets/img/travel-planet-2.svg",
   },
   {
     name: "PLANET NAMEK",
     distance: "96.12 million km",
-    img: "/Projects/space_website/assets/img/travel-planet-3.svg",
+    img: "assets/img/travel-planet-3.svg",
   },
   {
     name: "PLANET VENUS",
     distance: "86.609 million km",
-    img: "/Projects/space_website/assets/img/travel-planet-4.svg",
+    img: "assets/img/travel-planet-4.svg",
   },
 ];
 
@@ -115,11 +115,44 @@ cards.forEach((card, i) => {
 const scrollUpBtn = document.querySelector(".scroll_up_btn")
 const scrollUpIcon = document.querySelector(".ri-arrow-up-line")
 scrollUpBtn.addEventListener("click",()=>{
-
   scrollUpBtn.classList.add("opa-0")
-
-
 })
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({ duration: 1200, distance: '80px', opacity: 0,   easing: 'ease' });
+
+sr.reveal(".home_description, .cards_wrapper", {
+  origin: 'top',
+})
+sr.reveal(".home_sticker", {
+  origin: 'top',
+  delay: 800,
+})
+sr.reveal(".history_cards", {
+  origin: 'top',
+  interval: 100
+})
+
+
+sr.reveal(".hero_img", {
+  origin: 'bottom',
+})
+sr.reveal(".explore_banner", {
+  origin: 'left',
+})
+sr.reveal(".history .planet_1", {
+  origin: 'left',
+  delay: 800
+})
+sr.reveal(".explore_right_part", {
+  origin: 'right',
+})
+
+sr.reveal(".explore_planet", {
+  origin: 'right',
+  delay: 800,
+
+})
+
+
