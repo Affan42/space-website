@@ -7,7 +7,7 @@ addEvent(navbarToggler, "click", toggleNavbar);
 addEvent(navCloseBtn, "click", toggleNavbar);
 addEvent(overlay, "click", toggleNavbar);
 const navLinks = document.querySelectorAll(".nav_link");
-navLinks.forEach((navLink) => {
+navLinks.forEach(navLink => {
   navLink.addEventListener("click", () => {
     onNavLinkClick(navLink);
   });
@@ -21,28 +21,26 @@ function toggleNavbar() {
   overlay.classList.toggle("overlay_visible");
 }
 function onNavLinkClick(currentNavLink) {
-  navLinks.forEach((navLink) => {
+  navLinks.forEach(navLink => {
     navLink.classList.remove("active");
   });
   currentNavLink.classList.add("active");
 }
-/*=============== REMOVE MENU MOBILE ===============*/
 
 /*=============== ADD BLUR HEADER ===============*/
 const navbar = document.querySelector("nav");
-function toggleBlur(){
+function toggleBlur() {
   if (scrollY === 0) {
     navbar.classList.remove("blur_nav");
   } else {
     navbar.classList.add("blur_nav");
   }
 }
-toggleBlur()
+toggleBlur();
 window.addEventListener("scroll", () => {
-  toggleBlur()
-
+  toggleBlur();
 });
- 
+
 /*=============== SWIPER PLANETS ===============*/
 function calcSlidesPerView() {
   if (window.matchMedia("(max-width: 700px)").matches) {
@@ -112,47 +110,51 @@ cards.forEach((card, i) => {
   planetDistanceElem.innerHTML = originalPlanets[i].distance;
 });
 /*=============== SHOW SCROLL UP ===============*/
-const scrollUpBtn = document.querySelector(".scroll_up_btn")
-const scrollUpIcon = document.querySelector(".ri-arrow-up-line")
-scrollUpBtn.addEventListener("click",()=>{
-  scrollUpBtn.classList.add("opa-0")
-})
+const scrollUpBtn = document.querySelector(".scroll_up_btn");
+const scrollUpIcon = document.querySelector(".ri-arrow-up-line");
+scrollUpBtn.addEventListener("click", () => {
+  scrollUpBtn.classList.add("opa-0");
+  setTimeout(() => {
+    scrollUpBtn.classList.remove("opa-0");
+  }, 1500);
+});
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({ duration: 1200, distance: '80px', opacity: 0,   easing: 'ease' });
+const sr = ScrollReveal({
+  duration: 1200,
+  distance: "80px",
+  opacity: 0,
+  easing: "ease",
+});
 
 sr.reveal(".home_description, .cards_wrapper", {
-  origin: 'top',
-})
+  origin: "top",
+});
 sr.reveal(".home_sticker", {
-  origin: 'top',
+  origin: "top",
   delay: 800,
-})
+});
 sr.reveal(".history_cards", {
-  origin: 'top',
-  interval: 100
-})
-
+  origin: "top",
+  interval: 100,
+});
 
 sr.reveal(".hero_img", {
-  origin: 'bottom',
-})
+  origin: "bottom",
+});
 sr.reveal(".explore_banner", {
-  origin: 'left',
-})
+  origin: "left",
+});
 sr.reveal(".history .planet_1", {
-  origin: 'left',
-  delay: 800
-})
+  origin: "left",
+  delay: 800,
+});
 sr.reveal(".explore_right_part", {
-  origin: 'right',
-})
+  origin: "right",
+});
 
 sr.reveal(".explore_planet", {
-  origin: 'right',
+  origin: "right",
   delay: 800,
-
-})
-
-
+});
