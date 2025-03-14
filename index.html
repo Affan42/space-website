@@ -16,13 +16,17 @@
   <!--=============== SWIPER CSS ===============-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!--=============== SCROLLREVEAL ===============-->
+  <!--=============== AOS ===============-->
 
   <script src="https://unpkg.com/scrollreveal"></script>
 
 
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!--=============== CSS ===============-->
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <title>Space Verse</title>
 </head>
@@ -215,12 +219,17 @@
     <!--==================== HISTORY ====================-->
     <section class="history section" id="history">
       <figure>
-        <img src="assets/img/history-planet-1.svg" alt="planet_1" class=" decorative_image planet planet_1">
+        <img src="assets/img/history-planet-1.svg" alt="planet_1" class=" decorative_image planet planet_1" 
+        data-aos="fade-right"
+        data-aos-delay="800" >
 
       </figure>
       <figure>
         <img src="assets/img/history-planet-2.svg" alt="planet_2"
-          class=" slideAnim  SLIDE_LEFT_3 decorative_image planet planet_2">
+          class=" slideAnim  SLIDE_LEFT_3 decorative_image planet planet_2"
+          data-aos="fade-left"
+        data-aos-delay="1000"
+          >
 
       </figure>
       <div class="container">
@@ -264,13 +273,16 @@
     <section class="contact section">
 
       <div class="container">
+        <figure>
+          <img src="assets/img/footer-planet-2.svg" alt="" class=" decorative_image contact_planet">
+        </figure>
         <p class="title">
           GET OUR
           <span class="gradient_bg_text span_orange_clr">
             LATEST NEWS
           </span>
         </p>
-        <div class="slideAnim contact_input_wrapper">
+        <div class=" contact_input_wrapper">
           <input placeholder="" class="contact_input" id="PutEmail" type="text">
           <label class="contact_input_label" for="PutEmail">Email Address</label>
 
@@ -289,12 +301,9 @@
     <!--==================== FOOTER ====================-->
     <footer>
       <figure>
-        <img src="assets/img/footer-planet-1.svg" alt="" class=" slideAnim decorative_image planets planet_1">
+        <img src="assets/img/footer-planet-1.svg" alt="" class="  decorative_image planets planet_1">
       </figure>
-      <figure>
-        <img src="assets/img/footer-planet-2.svg" alt="" class="slideAnim decorative_image planets planet_2">
-
-      </figure>
+    
       <div class="container">
         <div class="footer_nav">
           <div class="nav_item">
@@ -313,7 +322,7 @@
           </div>
           <div class="social_icon">
             <i class="ri-instagram-line"></i>
-          </div>
+           </div>
           <div class="social_icon">
             <i class="ri-twitter-x-line"></i>
           </div>
@@ -322,7 +331,7 @@
       <a href="#">
         <div class="scroll_up_btn slideAnim SLIDE_UP_1">
           <i class="ri-arrow-up-line"></i>
-        </div>
+        </div>  
       </a>
     </footer>
 
@@ -332,6 +341,18 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <!--=============== AOS ===============-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init(
+        {
+          offset: 80, // offset (in px) from the original trigger point
+          duration: 1200, // values from 0 to 3000, with step 50ms
+          easing: 'ease', // default easing for AOS animations
+          
+        }
+      );
+    </script>
   </main>
 </body>
 

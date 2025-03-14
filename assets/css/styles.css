@@ -562,6 +562,11 @@ nav {
 }
 
 /*=============== CONTACT ===============*/
+.contact_planet {
+  height: 150px;
+  right: 100px;
+  bottom: -8rem;
+}
 .contact .title {
   text-align: center;
 }
@@ -655,11 +660,7 @@ footer .planet_1 {
   left: 70px;
 }
 
-footer .planet_2 {
-  height: 150px;
-  right: 100px;
-  top: 0%;
-}
+
 
 footer .container {
   display: flex;

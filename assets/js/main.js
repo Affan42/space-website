@@ -128,33 +128,34 @@ const sr = ScrollReveal({
   easing: "ease",
 });
 
-sr.reveal(".home_description, .cards_wrapper", {
+sr.reveal(".home_description, .cards_wrapper, .contact_input_wrapper", {
   origin: "top",
 });
-sr.reveal(".home_sticker", {
+sr.reveal(".home_sticker, .contact_planet", {
   origin: "top",
   delay: 800,
 });
 sr.reveal(".history_cards", {
   origin: "top",
-  interval: 100,
+  interval: 200,
 });
-
 sr.reveal(".hero_img", {
   origin: "bottom",
 });
-sr.reveal(".explore_banner", {
+sr.reveal("footer .planet_1", {
+  origin: "bottom",
+  delay: 800
+});
+sr.reveal(".  explore_banner", {
   origin: "left",
 });
-sr.reveal(".history .planet_1", {
-  origin: "left",
-  delay: 800,
-});
+
 sr.reveal(".explore_right_part", {
   origin: "right",
-});
+}); 
 
 sr.reveal(".explore_planet", {
   origin: "right",
   delay: 800,
 });
+
