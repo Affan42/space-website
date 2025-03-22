@@ -42,19 +42,9 @@ window.addEventListener("scroll", () => {
 });
 
 /*=============== SWIPER PLANETS ===============*/
-function calcSlidesPerView() {
-  if (window.matchMedia("(max-width: 700px)").matches) {
-    return 1;
-  } else if (window.matchMedia("(max-width: 1200px)").matches) {
-    return 2;
-  } else {
-    return 3;
-  }
-}
 
-let slidesPerView = calcSlidesPerView();
 const theSwiper = new Swiper(".swiper", {
-  slidesPerView: slidesPerView,
+  slidesPerView: 1,
 
   loop: true,
   loading: "lazy",
@@ -70,12 +60,16 @@ const theSwiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  breakpoints: {
+    700: {
+      slidesPerView: 2
+    },
+    1200: {
+      slidesPerView: 3
+    }
+  }
 });
-window.addEventListener("resize", () => {
-  slidesPerView = calcSlidesPerView();
-  theSwiper.params.slidesPerView = slidesPerView;
-  theSwiper.update();
-});
+
 const originalPlanets = [
   {
     name: "PLANET EARTH",

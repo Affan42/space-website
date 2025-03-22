@@ -85,8 +85,8 @@
   scroll-behavior: smooth;
 }
 
-html {
-  background-color: black;
+html{
+  background-color: var(--body-color);
 }
 
 body {
@@ -104,6 +104,7 @@ section {
   margin-bottom: 110px;
   display: flex;
   justify-content: center;
+  
 
 }
 
@@ -156,11 +157,9 @@ footer {
 .explore,
 .history {
   padding-top: 110px;
-}
-
-.history {
   overflow: hidden;
 }
+
 
 .title {
   font-size: var(--big-font-size);
@@ -305,6 +304,7 @@ nav {
   width: 100%;
   z-index: -1;
   object-fit: cover;
+  opacity: 0.8;
 }
 
 .home_title {
@@ -397,6 +397,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   height: 170px;
+  transition: transform 1s;
 }
 
 .card_middle_part {
@@ -432,7 +433,9 @@ nav {
   display: flex;
   justify-content: center;
 }
-
+.swiper-slide-next img{
+  transform: translateX(-50%) rotate(80deg);
+}
 .swiper-pagination {
   position: initial;
 }
